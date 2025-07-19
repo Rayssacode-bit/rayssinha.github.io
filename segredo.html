@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Segredo Secreto 🔐</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comfortaa', cursive;
+      background: linear-gradient(#f8eaff, #e2f5ff);
+      color: #333;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: #a45fc1;
+      font-size: 2rem;
+    }
+
+    input[type="password"] {
+      padding: 0.8rem;
+      border-radius: 1rem;
+      border: 2px solid #c8b4e4;
+      width: 80%;
+      max-width: 400px;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #c8b4e4;
+      color: white;
+      border: none;
+      border-radius: 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #a793cf;
+    }
+
+    .erro {
+      margin-top: 1rem;
+      color: red;
+      display: none;
+    }
+
+    .mensagem {
+      margin-top: 2rem;
+      background-color: #fff8ff;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px #e0c1f1;
+      display: none;
+    }
+
+    .scratch-container {
+      position: relative;
+      display: inline-block;
+      margin-top: 2rem;
+    }
+
+    .premio {
+      border-radius: 1rem;
+      display: block;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    #scratchCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 1rem;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧀 Digite a senha, ratinho...</h1>
+  <p>Espero que consiga de primeira, viu? skijdks 🐭💌</p>
+
+  <input type="password" id="senha" placeholder="Digite a senha...">
+  <br>
+  <button onclick="verificarSenha()">Desbloquear</button>
+
+  <div class="erro" id="erro">Hmm... tenta de novo, ratinho 🙈</div>
+
+  <div class="mensagem" id="mensagem">
+    <h2>Você conseguiu, ratinho branquinho! 🥺💕</h2>
+    <p>Um ano se passou, e eu quero te agradecer por todo o seu carinho, amor e cuidado. Você é uma pessoa muito especial que entrou na minha vida, e espero que continue nela por muitos e muitos anos. Eu te amo muito! Você me ajuda a ser uma pessoa melhor e a evoluir em várias áreas, e isso é valioso demais. Espero que eu também tenha esse efeito na sua vida. Quero ver o Armando se formar em medicina e estar presente em cada etapa da sua vida, apoiando e celebrando suas vitórias, porque são minhas também. <3
+Sou muito feliz com você. Amo passar todo tempo que a gente passa juntos, dar risada das suas palhaçadas e adoro seu jeito carinhoso. Espero que você nunca mude esse jeito comigo, porque eu acho encantador. Sou muito grata por ter você na minha vida, e que venham mais anos juntos.. Que a gente possa comemorar sempre, do jeito que der, porque cada segundo com você é especial demais. Te amo muito, meu ratinho branquinho, fofinho e lindinho! </p>
+     <p>Te amo, meu lindãaaaaaaaaao 🧀💗</p>
+    <p>Vou te dar um presente simbólico, porque sei que é algo que você gosta, kkkkkkkkkkkk! E também vou fazer uma tatuagem que você escolher.</p>
+    <h2>Raspe a raspadinha abaixo!</h2>
+    <p>PS: para receber o prêmio entre em contato comigo. rs</p>
+
+    <!-- Raspadinha -->
+    <div class="scratch-container">
+      <img src="parabéns.png" alt="Prêmio" class="premio" id="premioImg">
+      <canvas id="scratchCanvas" width="300" height="200"></canvas>
+    </div>
+  </div>
+
+  <script>
+    function verificarSenha() {
+      const senhaCorreta = "ratinhobranquinhofofinholindinho";
+      const senhaDigitada = document.getElementById("senha").value.trim().toLowerCase();
+      const mensagem = document.getElementById("mensagem");
+      const erro = document.getElementById("erro");
+
+      if (senhaDigitada === senhaCorreta) {
+        mensagem.style.display = "block";
+        erro.style.display = "none";
+        iniciarRaspadinha();
+      } else {
+        mensagem.style.display = "none";
+        erro.style.display = "block";
+      }
+    }
+
+    function iniciarRaspadinha() {
+      const canvas = document.getElementById('scratchCanvas');
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+      const height = canvas.height;
+
+      // Camada preta que será raspada
+      ctx.fillStyle = "#000000"; // preto
+      ctx.fillRect(-0, -0, width, height);
+
+      ctx.globalCompositeOperation = 'destination-out';
+
+      let isDrawing = false;
+
+      function draw(e) {
+        if (!isDrawing) return;
+        const rect = canvas.getBoundingClientRect();
+        const x = (e.clientX || e.touches[0].clientX) - rect.left;
+        const y = (e.clientY || e.touches[0].clientY) - rect.top;
+
+        ctx.beginPath();
+        ctx.arc(x, y, 15, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      canvas.addEventListener('mousedown', () => isDrawing = true);
+      canvas.addEventListener('mouseup', () => isDrawing = false);
+      canvas.addEventListener('mousemove', draw);
+
+      canvas.addEventListener('touchstart', () => isDrawing = true);
+      canvas.addEventListener('touchend', () => isDrawing = false);
+      canvas.addEventListener('touchmove', draw);
+    }
+  </script>
+</body>
+</html>
