@@ -1,103 +1,196 @@
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1 Ano de Transformice 🐭💗</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="queijo.png" type="image/x-icon">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Comfortaa', cursive;
-      background: linear-gradient(#f8eaff, #e2f5ff);
-      color: #333;
-      text-align: center;
-    }
-    header {
-      background-color: #ffccf2;
-      padding: 2rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #904eb0;
-    }
-    main {
-      padding: 2rem;
-    }
-    .start-btn {
-      background-color: #c8b4e4;
-      color: white;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .start-btn:hover {
-      background-color: #a793cf;
-    }
-    .dialogue {
-      margin-top: 2rem;
-      font-size: 1.1rem;
-    }
-    .footer {
-     font-size: 0.9rem;
-      color: #888;
-      padding: 1rem;
-      background-color: transparent;
-    }
-    .decorations {
-      margin-top: 2rem;
-    }
-    .decorations img {
-      width: 80px;
-      margin: 0 10px;
-      vertical-align: middle;
-    }
-    .name-label {
-      display: block;
-      font-size: 0.9rem;
-      color: #555;
-      margin-top: 0.3rem;
-    }
-    .char-container {
-      display: inline-block;
-      text-align: center;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Feliz Aniversário, Giovana! 🎸🌵</title>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#6d39b8;
+    --rosa:#ff6fb3;
+    --amarelo:#ffd166;
+    --areia:#fff6e6;
+    --grafite:#1e1e1e;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:'Comfortaa',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+    color:#222;
+    background:
+      radial-gradient(1200px 500px at 120% -10%, rgba(255,255,255,.35), transparent 70%),
+      linear-gradient(180deg, #fde6ff 0%, #ffeef6 35%, #fff9e9 100%);
+  }
+  header{
+    text-align:center;
+    padding:3rem 1.2rem 1.6rem;
+    position:relative;
+  }
+  .title{
+    font-family:'Rock Salt', cursive;
+    color:var(--grafite);
+    text-shadow:0 2px 0 #fff8;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height:1.1;
+  }
+  .subtitle{
+    margin:.6rem auto 0;
+    font-size:clamp(1rem, 2.5vw, 1.15rem);
+    color:#444;
+  }
+  .badge{
+    display:inline-block;
+    margin-top:.8rem;
+    padding:.35rem .8rem;
+    border-radius:999px;
+    background:linear-gradient(90deg,var(--roxo),var(--rosa));
+    color:#fff;
+    font-weight:700;
+    box-shadow:0 6px 16px rgba(109,57,184,.25);
+  }
+  .hero{
+    max-width:980px; margin:1.8rem auto 0; padding:0 1rem;
+    display:grid; grid-template-columns:1fr; gap:1rem;
+  }
+  @media (min-width:820px){
+    .hero{grid-template-columns:1.2fr .8fr; align-items:center;}
+  }
+  .card{
+    background: #ffffffcc;
+    backdrop-filter: blur(6px);
+    border:1px solid #fff;
+    border-radius:18px;
+    padding:1.2rem;
+    box-shadow:0 10px 24px rgba(0,0,0,.06);
+  }
+  .card h2{
+    margin:.2rem 0 0.6rem;
+    font-size:clamp(1.2rem,2.6vw,1.6rem);
+    color:#2b2b2b;
+  }
+  .list{
+    margin:0; padding-left:1.1rem;
+  }
+  .list li{ margin:.45rem 0; }
+  .chips{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.8rem;}
+  .chip{
+    padding:.35rem .65rem; border-radius:10px; font-size:.9rem; font-weight:700;
+    background:var(--areia); border:1px dashed #e2cfa5; color:#7b5a1a;
+  }
+
+  .figure{
+    border-radius:18px; overflow:hidden; position:relative; aspect-ratio: 16/10;
+    background:#111;
+  }
+  .figure img{ width:100%; height:100%; object-fit:cover; display:block; opacity:.92; }
+  .figure .overlay{
+    position:absolute; inset:0; display:flex; align-items:flex-end; padding:1rem;
+    background:linear-gradient(0deg, rgba(0,0,0,.55), transparent 50%);
+    color:#fff;
+    font-weight:700;
+    letter-spacing:.5px;
+  }
+
+  .grid{
+    max-width:980px; margin:1rem auto; padding:0 1rem;
+    display:grid; grid-template-columns:1fr; gap:1rem;
+  }
+  @media (min-width:740px){
+    .grid{ grid-template-columns:repeat(3,1fr); }
+  }
+
+  .section-title{
+    text-align:center; margin:2.2rem 1rem 1rem;
+    font-weight:800; color:#2b2b2b; font-size: clamp(1.2rem, 3vw, 1.6rem);
+  }
+
+  .stamp{
+    display:inline-flex; align-items:center; gap:.5rem;
+    background:#0e0e0e; color:#fff; border-radius:999px; padding:.45rem .8rem;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+  }
+  .stamp small{opacity:.8}
+
+  /* Raspadinha */
+  .scratch-wrap{
+    max-width:720px; margin:2rem auto; padding:0 1rem;
+  }
+  .scratch-card{
+    position:relative; display:inline-block; border-radius:16px; overflow:hidden;
+    box-shadow:0 12px 28px rgba(0,0,0,.1); border:1px solid #fff;
+    background:#000;
+  }
+  .prize{
+    display:block; width:100%; max-width:720px; height:auto;
+  }
+  canvas#scratch{
+    position:absolute; inset:0; width:100%; height:100%;
+    border-radius:16px;
+    touch-action:none; /* melhora no mobile */
+  }
+  .reveal-msg{
+    text-align:center; margin-top:.8rem; color:#444; font-weight:700;
+  }
+
+  footer{
+    text-align:center; padding:2.2rem 1rem 3rem; color:#666;
+  }
+  .foot-note{ font-size:.9rem; }
+</style>
 </head>
 <body>
-  <header>
-    <h1>1 ano entre queijos e corações 🧀💘🥰</h1>
-    <p>Ratão nos uniu, e agora... cê tá preso comigo nesse mapa pra sempre 🐭</p>
-  </header>
-  <main>
-    <div class="decorations">
-      <img src="Cheese.webp" alt="Queijo">
 
-      <div class="char-container">
-        <img src="Site-logo.webp" alt="Ratinho bemgotica#0000">
-        <span class="name-label">Bemgotica#0000</span>
-      </div>
+<header>
+  <div class="badge">🎂 46 anos da nossa Psicóloga Arretada</div>
+  <h1 class="title">Feliz Aniversário, Gigi! 🎸🌵</h1>
+  <p class="subtitle">Rock do Slash no coração, poesia de Zé Ramalho na alma, paixão da Calcinha Preta no volume máximo e um cuscuzinho pra coroar. 💜</p>
+</header>
 
-      <div class="char-container">
-        <img src="Site-logo.webp" alt="Ratinho mazettinho#0000">
-        <span class="name-label">Mazettinho#0000</span>
-      </div>
-
-      <img src="Cheese.webp" alt="Queijo">
+<section class="hero">
+  <div class="card">
+    <h2>FELIZ ANIVERSÁRIO GIGIIIIIII!!! 💌</h2>
+    <p>Feliz aniversário minha linda, isso aqui é só uma brincadeira que eu pensei aqui pra comemorar seu aniversário, mas te desejo tudo de bom na sua vida e que todos os seus sonhos se realizem! 
+       Conte comigo sempre que precisar, te amo!</p>
+       <p>Amo a nossa amizade e quero levar você pra vida toda! Espero que aproveite bastante o seu dia da melhor maneira possível, você merece demais. 💜</p>
+    <div class="chips">
+      <span class="chip">Psicóloga ⭐</span>
+      <span class="chip">Nordestina arretada 🌵</span>
+      <span class="chip">Fã do Slash 🎸</span>
+      <span class="chip">Team Cuscuz 💛</span>
     </div>
-
-    <p class="dialogue">
-      Hoje, faz 1 ano que um ratinho entrou na minha vida de brincadeira… e ficou.
-    </p>
-    <button class="start-btn" onclick="window.location.href='história.html'">Começar a aventura</button>
-  </main>
-  <div class="footer">
-    Feito com amor por Nodextina 💖
   </div>
+
+  <figure class="figure">
+    <!-- TROQUE AQUI: imagem “hero” (Slash / vibe rock) -->
+    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=1600&auto=format&fit=crop" alt="Guitarra em palco com luzes">
+    <figcaption class="overlay">“Se a vida fosse uma playlist, você seria solo de Slash + poesia de Zé + paixão da Calcinha Preta.”</figcaption>
+  </figure>
+</section>
+
+<h3 class="section-title">Nordeste no coração 🌞🌵</h3>
+<section class="grid">
+  <div class="card">
+    <!-- TROQUE AQUI: foto temática do Nordeste / cuscuz -->
+    <img src="CUSCUZ.jpg" alt="Cuscuz" style="width:100%; border-radius:12px;">
+    <p style="margin:.6rem 0 0">Cuscuzinho bom com charque que eu queria comer agora pqp</p>
+  </div>
+  <div class="card">
+    <!-- TROQUE AQUI -->
+    <img src="serrtão.jpg" alt="Paisagem do sertão" style="width:100%; border-radius:12px;">
+    <p style="margin:.6rem 0 0">Nossa terrinha sofrida da terra rachada e sem água Gigi</p>
+  </div>
+  <div class="card">
+    <!-- TROQUE AQUI -->
+    <img src="105447579-guitarrista-slash-do-guns-n-roses.-foto-instagram-guns-n-roses.avif" alt="Show ao vivo" style="width:100%; border-radius:12px;">
+    <p style="margin:.6rem 0 0">Seu homem que você morre de paixão</p>
+  </div>
+</section>
+
+<div style="text-align:center; margin-top:1.2rem">
+  <span class="stamp">🌟 <small>Vamos comemorar seus 46 aninhos de vida!!</small></span>
+</div>
+
+</script>
 </body>
 </html>
